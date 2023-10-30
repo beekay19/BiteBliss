@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.drowndown__parent:hover .arrow {
+  transform: rotate(180deg);
+  transition: all 0.5s;
+}
+.drowndown__parent .arrow {
+  transition: all 0.5s;
+}
+
+.drowndown__parent {
+  transition: all 500ms linear;
+}
+
+.drowndown__parent:hover .dropdown__container {
+  top: 100%;
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.dropdown__container {
+  opacity: 0;
+  pointer-events: none;
+  /* padding: 1rem 0; */
+  transition: opacity 0.5s, top 0.5s;
+  top: 6.5rem;
+}
+.drowndown__parent:hover .dropdown__child {
+  pointer-events: initial;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+img {
+  width: 100%;
+  display: inline-block;
+}
+/* .create-listing {
+  background-image: url("./assets/icons-images/different-Nigerian-dishes.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+} */
+.overlay {
+  transform: scale(1, 0);
+  transform-origin: top right;
+}
+.overlay.active-overlay {
+  transform: scale(1, 1);
+}
+.create-listing::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  @apply bg-secondary;
+  width: 100%;
+  height: 100%;
+}
+
+.create-listing img {
+  z-index: 1;
+  /* position: relative; */
+  object-fit: contain;
+  /* width: 100%;
+  height: 100%; */
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.input-radio:checked ~ .input-btn {
+  @apply bg-secondary;
+}
+
+th {
+  padding: 1rem;
+}
+td {
+  padding: 0.5rem;
+}
+
+th {
+  @apply text-left bg-white/10;
+}
+tr:nth-of-type(2n) {
+  @apply bg-white/10;
+}
+@media (max-width: 767px) {
+  .dropdown__container {
+    opacity: 1;
+    top: 100%;
+    transition: height 0.5s;
+  }
+  .drowndown__parent:hover .arrow {
+    transform: rotate(0);
+  }
+  /* .dropdown__container.active__dropdown{
+        transition: height 0.5s;
+        
+    } */
+  .dropdown__child {
+    @apply border-b border-gray-300;
+  }
+  .hamburger {
+    transform: scale(1, 0);
+    transform-origin: top;
+  }
+  .hamburger.active-hamburger {
+    transform: scale(1, 1);
+  }
+  th {
+    display: none;
+  }
+  td {
+    display: block;
+    padding: 0.35rem 1rem;
+  }
+  td:first-child {
+    padding-top: 0.5rem;
+  }
+  td:last-child {
+    padding-bottom: 1rem;
+  }
+  td::before {
+    content: attr(data-cell) " : ";
+    @apply font-bold capitalize;
+  }
+}

@@ -1,0 +1,15 @@
+.spin{
+    width: 9rem;
+    aspect-ratio: 1;
+    background-color: white;
+    border-radius: 50%;
+    border-width: 20px;
+    border-color: #009FC2 transparent #009FC2 transparent;
+    animation: spinner 2s infinite linear;
+}
+
+@keyframes spinner{
+    to{
+        transform: rotate(360deg);
+    }
+}
